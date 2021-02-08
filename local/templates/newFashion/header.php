@@ -42,10 +42,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container">
 			<div class="main-header">
 				<div class="carting">
-					<ul><li><a href="login.html"> LOGIN</a></li></ul>
+					<ul><li><a href="/"> LOGIN</a></li></ul>
 				</div>
 				<div class="logo">
-					<h3><a href="index.html">NEW FASHIONS</a></h3>
+					<h3><a href="/">NEW FASHIONS</a></h3>
 				</div>			  
 				<div class="box_1">				 
 					<a href="cart.html"><h3>Cart: <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)<img src="images/cart.png" alt=""/></h3></a>
@@ -57,245 +57,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 
 			<!-- start header menu -->
-			<ul class="megamenu skyblue">
-				<li class="active grid"><a class="color1" href="index.html">Home</a></li>
-				<li class="grid"><a href="#">Women</a>
-					<div class="megapanel">
-						<div class="row">
-							<div class="col1">
-								<div class="h_nav">
-									<h4>shop</h4>
-									<ul>
-										<li><a href="products.html">new arrivals</a></li>
-										<li><a href="products.html">men</a></li>
-										<li><a href="products.html">women</a></li>
-										<li><a href="products.html">accessories</a></li>
-										<li><a href="products.html">kids</a></li>
-										<li><a href="products.html">brands</a></li>
-									</ul>	
-								</div>							
-							</div>
-							<div class="col1">
-								<div class="h_nav">
-									<h4>help</h4>
-									<ul>
-										<li><a href="products.html">trends</a></li>
-										<li><a href="products.html">sale</a></li>
-										<li><a href="products.html">style videos</a></li>
-										<li><a href="products.html">accessories</a></li>
-										<li><a href="products.html">kids</a></li>
-										<li><a href="products.html">style videos</a></li>
-									</ul>	
-								</div>							
-							</div>
-							<div class="col1">
-								<div class="h_nav">
-									<h4>Products</h4>
-									<ul>
-										<li><a href="products.html">trends</a></li>
-										<li><a href="products.html">sale</a></li>
-										<li><a href="products.html">style videos</a></li>
-										<li><a href="products.html">accessories</a></li>
-										<li><a href="products.html">kids</a></li>
-										<li><a href="products.html">style videos</a></li>
-									</ul>	
-								</div>												
-							</div>						
-							<div class="col1">
-								<div class="h_nav">
-									<h4>my company</h4>
-									<ul>
-										<li><a href="products.html">tremds</a></li>
-										<li><a href="products.html">sale</a></li>
-										<li><a href="products.html">style videos</a></li>
-										<li><a href="products.html">accessories</a></li>
-										<li><a href="products.html">kids</a></li>
-										<li><a href="products.html">style videos</a></li>
-									</ul>	
-								</div>
-							</div>
-							<div class="col1">
-								<div class="h_nav">
-									<h4>popular</h4>
-									<ul>
-										<li><a href="products.html">new arrivals</a></li>
-										<li><a href="products.html">men</a></li>
-										<li><a href="products.html">women</a></li>
-										<li><a href="products.html">accessories</a></li>
-										<li><a href="products.html">kids</a></li>
-										<li><a href="products.html">style videos</a></li>
-									</ul>	
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col2"></div>
-							<div class="col1"></div>
-							<div class="col1"></div>
-							<div class="col1"></div>
-							<div class="col1"></div>
-						</div>
-					</div>
-				</li>
-				<li><a href="#">MEN</a><div class="megapanel">
-					<div class="row">
-						<div class="col1">
-							<div class="h_nav">
-								<h4>shop</h4>
-								<ul>
-									<li><a href="men.html">new arrivals</a></li>
-									<li><a href="men.html">men</a></li>
-									<li><a href="men.html">women</a></li>
-									<li><a href="men.html">accessories</a></li>
-									<li><a href="men.html">kids</a></li>
-									<li><a href="men.html">brands</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>help</h4>
-								<ul>
-									<li><a href="men.html">trends</a></li>
-									<li><a href="men.html">sale</a></li>
-									<li><a href="men.html">style videos</a></li>
-									<li><a href="men.html">accessories</a></li>
-									<li><a href="men.html">kids</a></li>
-									<li><a href="men.html">style videos</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Products</h4>
-								<ul>
-									<li><a href="men.html">trends</a></li>
-									<li><a href="men.html">sale</a></li>
-									<li><a href="men.html">style videos</a></li>
-									<li><a href="men.html">accessories</a></li>
-									<li><a href="men.html">kids</a></li>
-									<li><a href="men.html">style videos</a></li>
-								</ul>	
-							</div>												
-						</div>						
-						<div class="col1">
-							<div class="h_nav">
-								<h4>my company</h4>
-								<ul>
-									<li><a href="men.html">trends</a></li>
-									<li><a href="men.html">sale</a></li>
-									<li><a href="men.html">style videos</a></li>
-									<li><a href="men.html">accessories</a></li>
-									<li><a href="men.html">kids</a></li>
-									<li><a href="men.html">style videos</a></li>
-								</ul>	
-							</div>
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>popular</h4>
-								<ul>
-									<li><a href="men.html">new arrivals</a></li>
-									<li><a href="men.html">men</a></li>
-									<li><a href="men.html">women</a></li>
-									<li><a href="men.html">accessories</a></li>
-									<li><a href="men.html">kids</a></li>
-									<li><a href="men.html">style videos</a></li>
-								</ul>	
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col2"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-					</div>
-				</div>
-			</li>
-			<li class="grid"><a href="about.html">ABOUT US</a></li>
-			<li class="grid"><a href="blog.html">BLOG</a></li>				
-			<li><a href="#">SHOP ONLINE</a>
-				<div class="megapanel">
-					<div class="row">
-						<div class="col1">
-							<div class="h_nav">
-								<h4>shop</h4>
-								<ul>
-									<li><a href="shop.html">new arrivals</a></li>
-									<li><a href="shop.html">men</a></li>
-									<li><a href="shop.html">women</a></li>
-									<li><a href="shop.html">accessories</a></li>
-									<li><a href="shop.html">kids</a></li>
-									<li><a href="shop.html">brands</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>help</h4>
-								<ul>
-									<li><a href="shop.html">trends</a></li>
-									<li><a href="shop.html">sale</a></li>
-									<li><a href="shop.html">style videos</a></li>
-									<li><a href="shop.html">accessories</a></li>
-									<li><a href="shop.html">kids</a></li>
-									<li><a href="shop.html">style videos</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Products</h4>
-								<ul>
-									<li><a href="shop.html">trends</a></li>
-									<li><a href="shop.html">sale</a></li>
-									<li><a href="shop.html">style videos</a></li>
-									<li><a href="shop.html">accessories</a></li>
-									<li><a href="shop.html">kids</a></li>
-									<li><a href="shop.html">style videos</a></li>
-								</ul>	
-							</div>												
-						</div>						
-						<div class="col1">
-							<div class="h_nav">
-								<h4>my company</h4>
-								<ul>
-									<li><a href="shop.html">trends</a></li>
-									<li><a href="shop.html">sale</a></li>
-									<li><a href="shop.html">style videos</a></li>
-									<li><a href="shop.html">accessories</a></li>
-									<li><a href="shop.html">kids</a></li>
-									<li><a href="shop.html">style videos</a></li>
-								</ul>	
-							</div>
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>popular</h4>
-								<ul>
-									<li><a href="shop.html">new arrivals</a></li>
-									<li><a href="shop.html">men</a></li>
-									<li><a href="shop.html">women</a></li>
-									<li><a href="shop.html">accessories</a></li>
-									<li><a href="shop.html">kids</a></li>
-									<li><a href="shop.html">style videos</a></li>
-								</ul>	
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col2"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-					</div>
-				</div>
-			</li>			
-
-		</ul> 			 
+			<?$APPLICATION->IncludeComponent(
+				"bitrix:menu", "top_menu", Array(
+				"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+				"CHILD_MENU_TYPE" => "top_menu",	// Тип меню для остальных уровней
+				"DELAY" => "N",	// Откладывать выполнение шаблона меню
+				"MAX_LEVEL" => "1",	// Уровень вложенности меню
+				"MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
+				0 => "",
+				),
+				"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+				"MENU_CACHE_TYPE" => "A",	// Тип кеширования
+				"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+				"ROOT_MENU_TYPE" => "top_menu",	// Тип меню для первого уровня
+				"USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+				),
+				false
+			);?>		 
 		<div class="clearfix"></div>			   	
 	</div>
 	<div class="caption">

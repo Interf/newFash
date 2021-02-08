@@ -457,38 +457,32 @@ $APPLICATION->SetTitle("Главная страница сайта newFash");
 
 	 </div>
 	 <div class="col-md-6 ftr-left">
-		 <div class="ftr-list">
-			 <ul>
-				 <li><a href="#">Home</a></li>
-				 <li><a href="about.html">About</a></li>
-				 <li><a href="blog.html">Blog</a></li>
-				 <li><a href="products.html">Top Seller</a></li>
-				 <li><a href="shop.html">New Models</a></li>
-				 <li><a href="404.html">Combos</a></li>
-				 <li><a href="products.html">Collection</a></li>
-				 <li><a href="contact.html">Contact</a></li>
-			 </ul>
-		 </div>
-		 <div class="ftr-list2">
-			 <ul>				 
-				 <li><a href="#">Combos</a></li>
-				 <li><a href="#">Trendy</a></li>
-				 <li><a href="#">Fashion</a></li>
-				 <li><a href="#">College</a></li>
-				 <li><a href="#">Party</a></li>
-				 <li><a href="#">Dress</a></li>
-				 <li><a href="#">Kurtas & kurtis</a></li>
-			 </ul>
-		 </div>
+	 	<?$APPLICATION->IncludeComponent(
+	 		"bitrix:menu",
+	 		"bottom_menu",
+	 		Array(
+	 			"ALLOW_MULTI_SELECT" => "N",
+	 			"CHILD_MENU_TYPE" => "left",
+	 			"DELAY" => "N",
+	 			"MAX_LEVEL" => "1",
+	 			"MENU_CACHE_GET_VARS" => array(0=>"",),
+	 			"MENU_CACHE_TIME" => "7200",
+	 			"MENU_CACHE_TYPE" => "A",
+	 			"MENU_CACHE_USE_GROUPS" => "Y",
+	 			"ROOT_MENU_TYPE" => "bottom_menu",
+	 			"USE_EXT" => "N"
+	 		)
+	 		);?>
 		 <div class="clearfix"></div>
-		 <h4>FOLLOW US</h4>
-		 <div class="social-icons">
-		 <a href="#"><span class="in"> </span></a>
-		 <a href="#"><span class="you"> </span></a>
-		 <a href="#"><span class="be"> </span></a>
-		 <a href="#"><span class="twt"> </span></a>
-		 <a href="#"><span class="fb"> </span></a>
-		 </div>
+		 <?$APPLICATION->IncludeComponent(
+		 	"bitrix:main.include",
+		 	"",
+		 	Array(
+		 		"AREA_FILE_SHOW" => "page",
+		 		"AREA_FILE_SUFFIX" => "inc",
+		 		"EDIT_TEMPLATE" => ""
+		 	)
+		 	);?>
 	 </div>	 
 	 <div class="clearfix"></div>
 	 </div>
