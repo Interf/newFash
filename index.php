@@ -446,16 +446,18 @@ $APPLICATION->SetTitle("Главная страница сайта newFash");
 <!--fotter-->
 <div class="fotter">
 	 <div class="container">
-	 <div class="col-md-6 contact">
-		  <form>
-			 <input type="text" class="text" value="Name..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name...';}">
-			 <input type="text" class="text" value="Email..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email...';}">
-			 <textarea onfocus="if(this.value == 'Message...') this.value='';" onblur="if(this.value == '') this.value='Message...';" >Message...</textarea>	
-			 <div class="clearfix"></div>
-			 <input type="submit" value="SUBMIT">
-		 </form>
-
-	 </div>
+	 	<?$APPLICATION->IncludeComponent(
+	 		"bitrix:main.feedback",
+	 		"feedback_home",
+	 		Array(
+	 			"COMPONENT_TEMPLATE" => "feedback_home",
+	 			"EMAIL_TO" => "int@int.int",
+	 			"EVENT_MESSAGE_ID" => array(0=>"7",),
+	 			"OK_TEXT" => "Спасибо, ваше сообщение принято.",
+	 			"REQUIRED_FIELDS" => array(0=>"NAME",1=>"EMAIL",2=>"MESSAGE",),
+	 			"USE_CAPTCHA" => "N"
+	 		)
+	 		);?>
 	 <div class="col-md-6 ftr-left">
 	 	<?$APPLICATION->IncludeComponent(
 	 		"bitrix:menu",
