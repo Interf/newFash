@@ -2,6 +2,7 @@
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
 use \Bitrix\Main\Loader;
+use \Bitrix\Main\Localization\Loc;
 
 class CatalogList extends CBitrixComponent
 {
@@ -23,23 +24,23 @@ class CatalogList extends CBitrixComponent
 	protected function handlerError($param)
 	{
 		if(! Loader::includeModule("iblock")) {
-			$this->errorCollection[] = "Ошибка загрузки модуля Iblock";
+			$this->errorCollection[] = Loc::GetMessage("ERROR_IBLOCK");
 		}
 
 		if (! Loader::includeModule("catalog")) {
-			$this->errorCollection[] = "Ошибка загрузки модуля Catalog";
+			$this->errorCollection[] = Loc::GetMessage("ERROR_CATALOG");
 		}
 
 		if (! $param["IBLOCK_TYPE"]) {
-			$this->errorCollection[] = "Не заполнен параметр Типа инфоблока";
+			$this->errorCollection[] = Loc::GetMessage("ERROR_IBLOCK_TYPE");
 		}
 
 		if (! $param["IBLOCK_ID"]) {
-			$this->errorCollection[] = "Некорректный id инфоблока";
+			$this->errorCollection[] = Loc::GetMessage("ERROR_IBLOCK_ID");
 		}
 
 		if (! $param["PRICE_TYPE"]) {
-			$this->errorCollection[] = "Некорректный тип цен";
+			$this->errorCollection[] = Loc::GetMessage("ERROR_PRICE_TYPE");
 		}
 
 		switch ($param["CACHE_TYPE"]) {
@@ -49,7 +50,7 @@ class CatalogList extends CBitrixComponent
 			break;
 			
 			default:
-			$this->errorCollection[] = "Некорректный тип кэширования";
+			$this->errorCollection[] = Loc::GetMessage("ERROR_CACHE_TYPE");
 			break;
 		}
 

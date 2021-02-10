@@ -17,7 +17,7 @@ $aMenuLinksExt = $APPLICATION->IncludeComponent(
 	"bitrix:menu.sections",
 	"",
 	Array(
-		"CACHE_TIME" => "3600",
+		"CACHE_TIME" => "7200",
 		"CACHE_TYPE" => "A",
 		"DEPTH_LEVEL" => "2",
 		"DETAIL_PAGE_URL" => "#SECTION_CODE#/#ELEMENT_CODE#/",

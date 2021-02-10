@@ -11,7 +11,7 @@ if (
 	return false;
 }
 
-$arTypeList = CIBlockParameters::GetIBlockTypes(["-" => "Выберите тип инфоблока"]);
+$arTypeList = CIBlockParameters::GetIBlockTypes(["-" => Loc::getMessage("IBLOCK_TYPE_CHOOSE")]);
 
 $arIbList = ["-" => "Выберите инфоблок"];
 if ($arCurrentValues["IBLOCK_TYPE"] != "-") {
@@ -34,15 +34,10 @@ while ($arPriceType = $dbPriceType->Fetch())
 }
 
 $arComponentParameters = array(
-	"GROUPS" => array(
-		"BASKET_GROUP" => array(
-			"NAME" => "Параметры корзины"
-		)
-	),
 	"PARAMETERS" => array(
 		"IBLOCK_TYPE" => array(
 			"PARENT" => "DATA_SOURCE",
-			"NAME" =>  "Тип инфоблока",
+			"NAME" =>  Loc::getMessage("IBLOCK_TYPE"),
 			"TYPE" => "LIST",
 			"VALUES" => $arTypeList,
 			"DEFAULT" => "-",
@@ -52,7 +47,7 @@ $arComponentParameters = array(
 		),
 		"IBLOCK_ID" => array(
 			"PARENT" => "DATA_SOURCE",
-			"NAME" =>  "Инфоблок",
+			"NAME" =>  Loc::getMessage("IBLOCK_ID"),
 			"TYPE" => "LIST",
 			"VALUES" => $arIbList,
 			"DEFAULT" => "-",
@@ -61,15 +56,15 @@ $arComponentParameters = array(
 			"SORT" => 200,
 		),
 		"PRICE_TYPE" => array(
-			"PARENT" => "BASKET_GROUP",
-			"NAME" =>  "Тип цены",
+			"PARENT" => "DATA_BASE",
+			"NAME" =>  Loc::getMessage("PRICE_TYPE"),
 			"TYPE" => "LIST",
 			"VALUES" => $arPriceList,
 			"MULTIPLE" => "N"
 		),
 		"COUNT_ON_PAGE" => array(
 			"PARENT" => "BASE",
-			"NAME" =>  "Количество элементов на странице",
+			"NAME" =>  Loc::getMessage("COUNT_ON_PAGE"),
 			"TYPE" => "STRING",
 			"DEFAULT" => ""
 		),

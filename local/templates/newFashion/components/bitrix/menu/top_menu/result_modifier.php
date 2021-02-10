@@ -12,3 +12,5 @@ foreach($arResult as $arItem) {
 }
 
 $arResult = $arMenu;
+
+$this->__component->setResultCacheKeys([]);
