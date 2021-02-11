@@ -1,5 +1,6 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
+$APPLICATION->SetPageProperty("not_show_nav_chain", "Y");
 $APPLICATION->SetPageProperty("keywords", "магазин, интернет-магазин, купить одежду");
 $APPLICATION->SetPageProperty("description", "Описание");
 $APPLICATION->SetTitle("Главная страница сайта newFash");

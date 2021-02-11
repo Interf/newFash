@@ -3,6 +3,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
 use Bitrix\Main\Page\Asset;
 
+$isHome = ($APPLICATION->GetCurPage() == "/");
 ?>
 
 <!--A Design by W3layouts
@@ -38,7 +39,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body>
 	<div id="panel"><?php $APPLICATION->ShowPanel(); ?></div>
 	<!--header-->
-	<div class="header">
+	<div class="<?=($isHome) ? 'header' : 'header2 text-center'?>">
 		<div class="container">
 			<div class="main-header">
 				<div class="carting">
@@ -76,10 +77,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			);?>		 
 		<div class="clearfix"></div>			   	
 	</div>
-	<div class="caption">
-		<h1>FASHION AND CREATIVITY</h1>	 
-		<p>Sed dapibus est a lorem dictum, id dignissim lacus fermentum. Nulla ut nibh in libero maximus pretium
-		Nunc vulputate vel tellus ac elementum. Duis nec tincidunt dolor, ac dictum eros.</p>
-	</div>
+
+	<?php if ($isHome) : ?>
+		<div class="caption">
+			<h1>FASHION AND CREATIVITY</h1>	 
+			<p>Sed dapibus est a lorem dictum, id dignissim lacus fermentum. Nulla ut nibh in libero maximus pretium
+			Nunc vulputate vel tellus ac elementum. Duis nec tincidunt dolor, ac dictum eros.</p>
+		</div>
+	<?php endif; ?>
+
 </div>
 
+<?php if (! $isHome) : ?>
+<div class="product-main">
+	<div class="container">
+		<?$APPLICATION->IncludeComponent(
+			"bitrix:breadcrumb",
+			"breadCrumb",
+			Array(
+				"PATH" => "",
+				"SITE_ID" => "s1",
+				"START_FROM" => "0"
+			)
+			);?>
+		<h2 style="text-transform: uppercase;"><?php $APPLICATION->ShowTitle(); ?></h2>
+<?php endif; ?>
