@@ -3,7 +3,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
 use Bitrix\Main\Page\Asset;
 
-$isHome = ($APPLICATION->GetCurPage() == "/");
+$isHome = ($APPLICATION->GetCurDir() == "/");
 ?>
 
 <!--A Design by W3layouts
@@ -100,5 +100,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				"START_FROM" => "0"
 			)
 			);?>
-		<h2 style="text-transform: uppercase;"><?php $APPLICATION->ShowTitle(); ?></h2>
+			<?php if (strpos($APPLICATION->GetCurPage(), "/catalog/", 0) === false) : ?>
+				<h2 style="text-transform: uppercase;"><?php $APPLICATION->ShowTitle(false); ?></h2>
+			<?php endif; ?>
 <?php endif; ?>
