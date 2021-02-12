@@ -1,0 +1,9 @@
+.blog-single {
+	margin:2em 0;
+}
+.blog-single  h2{
+	color:#3C3B3B;
+	margin-bottom:0.5em;
+	font-weight: 600;
+	font-family: 'Raleway', sans-serif;
+}

@@ -100,7 +100,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				"START_FROM" => "0"
 			)
 			);?>
-			<?php if (strpos($APPLICATION->GetCurPage(), "/catalog/", 0) === false) : ?>
+			<?php if (
+						strpos($APPLICATION->GetCurPage(), "/catalog/", 0) === false &&
+						strpos($APPLICATION->GetCurPage(), "/blog/", 0) === false
+					) : ?>
 				<h2 style="text-transform: uppercase;"><?php $APPLICATION->ShowTitle(false); ?></h2>
 			<?php endif; ?>
 <?php endif; ?>
