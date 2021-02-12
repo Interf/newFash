@@ -6,7 +6,7 @@ global $APPLICATION;
 $homeLink = array(
 	array(
 		"Home",
-		"/",
+		"/index.php",
 		array(),
 		array(),
 		""
