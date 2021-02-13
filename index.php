@@ -6,24 +6,22 @@ $APPLICATION->SetPageProperty("description", "Описание");
 $APPLICATION->SetTitle("Главная страница сайта newFash");
 ?> 
 
+<?$APPLICATION->IncludeComponent(
+	"interf:element.list", 
+	"home.list", 
+	array(
+		"CACHE_TIME" => "7200",
+		"CACHE_TYPE" => "A",
+		"COUNT_ON_PAGE" => "3",
+		"IBLOCK_ID" => "2",
+		"IBLOCK_TYPE" => "blog",
+		"SORT_FIELD" => "ID",
+		"SORT_ORDER" => "ASC",
+		"COMPONENT_TEMPLATE" => "home.list"
+	),
+	false
+);?>
 
-
-<div class="categoires">
-	<div class="container">
-		<a href="#"><div class="col-md-4 sections fashion-grid-a">
-			<h4>Fashion</h4>
-			<p>dignissim</p>			 					
-		</div></a>
-		<a href="#"><div class="col-md-4 sections fashion-grid-b">
-			<h4>Beauty</h4>
-			<p>fermentum</p>			 					
-		</div></a>
-		<a href="#"><div class="col-md-4 sections fashion-grid-c">
-			<h4>Creativity</h4>
-			<p>vulputate</p>				
-		</div></a>
-	</div>
-</div>
 <!---->
 <div class="features" id="features">
 	<div class="container">

@@ -43,6 +43,10 @@ class CatalogList extends CBitrixComponent
 			$this->errorCollection[] = Loc::GetMessage("ERROR_PRICE_TYPE");
 		}
 
+		if (! $this->arParams["CACHE_TIME"]) {
+			$this->errorCollection[] = Loc::GetMessage("ERROR_CACHE_TIME"); 
+		}
+
 		switch ($param["CACHE_TYPE"]) {
 			case 'A':
 			case 'Y':
