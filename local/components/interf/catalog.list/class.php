@@ -11,12 +11,13 @@ class CatalogList extends CBitrixComponent
 
 	public function onPrepareComponentParams($param)
 	{
-		$param["IBLOCK_TYPE"] = mb_strlen($param["IBLOCK_TYPE"]) > 0 ? htmlspecialchars($param["IBLOCK_TYPE"]) : false;
+		$param["IBLOCK_TYPE"] = htmlspecialchars($param["IBLOCK_TYPE"]);
 		$param["IBLOCK_ID"] = intval($param["IBLOCK_ID"]);
 		$param["PRICE_TYPE"] = intval($param["PRICE_TYPE"]);
 		$param["COUNT_ON_PAGE"] = intval($param["COUNT_ON_PAGE"]);
 		$param["CACHE_TIME"] = intval($param["CACHE_TIME"]);
-		$param["CACHE_TYPE"] = htmlspecialchars($param["CACHE_TYPE"]);
+		$param["CACHE_TYPE"] = trim(htmlspecialchars($param["CACHE_TYPE"]));
+		$param["USE_PAGINATOR"] = $param["USE_PAGINATOR"] == "Y" ? "Y" : "N";
 
 		return $param;
 	}
@@ -93,6 +94,8 @@ class CatalogList extends CBitrixComponent
 
 		$this->handlerQuery();
 
+		CPageOption::SetOptionString("main", "nav_page_in_session", "N");
+
 		$arSort = [];
 		if (is_array($this->sort)) {
 			$arSort = $this->sort;
@@ -123,9 +126,18 @@ class CatalogList extends CBitrixComponent
 			$arSelect[] = "CURRENCY_" . $this->arParams["PRICE_TYPE"];
 		}
 
-		$arNavParams = array("nTopCount" => $this->arParams["COUNT_ON_PAGE"]);
-
-		if ($this->startResultCache(false, [$arSort, $arFilter, $arNavParams, $arSelect])) {
+		if ($this->arParams["USE_PAGINATOR"] == "Y") {
+			$arNavParams = array(
+				"nPageSize" => $this->arParams["COUNT_ON_PAGE"], 
+				"bShowAll" => false, 
+			);
+			$arNavigation = CDBResult::GetNavParams($arNavParams);
+		} else {
+			$arNavParams = array("nTopCount" => $this->arParams["COUNT_ON_PAGE"]);
+			$arNavigation = false;
+		}
+		
+		if ($this->startResultCache(false, [$arSort, $arFilter, $arNavParams, $arSelect, $arNavigation])) {
 
 			$rsItems = CIBlockElement::getList(
 				$arSort,
@@ -134,6 +146,8 @@ class CatalogList extends CBitrixComponent
 				$arNavParams,
 				$arSelect
 			);
+
+			$this->arResult["NAV_STRING"] = $rsItems->GetPageNavStringEx($navComponentObject, 'Страница', '', false);
 
 			$imgIdList = [];
 			while ($item = $rsItems->GetNext()) {

@@ -71,5 +71,11 @@ $arComponentParameters = array(
 		"CACHE_TIME" => array(
 			"DEFAULT" => "7200"
 		),
+		"USE_PAGINATOR" => array(
+			"PARENT" => "BASE",
+			"NAME" => Loc::getMessage("USE_PAGINATOR"),
+			"TYPE" => "CHECKBOX",
+			"DEFAULT" => "N"
+		)
 	)
 );

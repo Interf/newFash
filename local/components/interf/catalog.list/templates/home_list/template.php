@@ -56,6 +56,11 @@ use \Bitrix\Main\Localization\Loc;
 				</div>			
 			<?php endforeach; ?>
 			<div class="clearfix"></div>
+			<?php if ($arParams["USE_PAGINATOR"] == "Y") : ?>
+				<div class="paginator">
+					<?=$arResult["NAV_STRING"];?>
+				</div>
+			<?php endif; ?>
 		</div>				
 	</div>				
 </div>
