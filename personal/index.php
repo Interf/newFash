@@ -29,7 +29,7 @@ $APPLICATION->SetTitle("Personal");
 		"CUSTOM_PAGES" => "",
 		"CUSTOM_SELECT_PROPS" => array(
 		),
-		"MAIN_CHAIN_NAME" => "Персональный раздел",
+		"MAIN_CHAIN_NAME" => "",
 		"NAV_TEMPLATE" => "",
 		"ONLY_INNER_FULL" => "N",
 		"ORDERS_PER_PAGE" => "20",

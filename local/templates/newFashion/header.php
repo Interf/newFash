@@ -43,9 +43,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="<?=($isHome) ? 'header' : 'header2 text-center'?>">
 		<div class="container">
 			<div class="main-header">
-				<div class="carting">
-					<ul><li><a href="/"> LOGIN</a></li></ul>
-				</div>
+				<?$APPLICATION->IncludeComponent("bitrix:system.auth.form", "auth.form.header", Array(
+					"FORGOT_PASSWORD_URL" => "",	// Страница забытого пароля
+						"PROFILE_URL" => "/personal/profile/",	// Страница профиля
+						"REGISTER_URL" => "/auth/",	// Страница регистрации
+						"SHOW_ERRORS" => "N",	// Показывать ошибки
+					),
+				false
+				);?>
 				<div class="logo">
 					<h3><a href="/">NEW FASHIONS</a></h3>
 				</div>

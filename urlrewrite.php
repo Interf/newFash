@@ -24,7 +24,7 @@ $arUrlRewrite=array (
     'PATH' => '/bitrix/services/stssync/calendar/index.php',
     'SORT' => 100,
   ),
-  9 => 
+  11 => 
   array (
     'CONDITION' => '#^/personal/#',
     'RULE' => '',

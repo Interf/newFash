@@ -1,0 +1,29 @@
+<?
+$MESS["AUTH_REGISTER"] = "Регистрация";
+$MESS["AUTH_NAME"] = "Имя";
+$MESS["AUTH_LAST_NAME"] = "Фамилия";
+$MESS["AUTH_LOGIN_MIN"] = "Логин (минимум 3 символа)";
+$MESS["AUTH_CONFIRM"] = "Подтверждение пароля";
+$MESS["CAPTCHA_REGF_PROMT"] = "Введите слово на картинке";
+$MESS["AUTH_REQ"] = "Обязательные поля.";
+$MESS["AUTH_AUTH"] = "Авторизация";
+$MESS["AUTH_PASSWORD_REQ"] = "Пароль";
+$MESS["AUTH_EMAIL_WILL_BE_SENT"] = "На указанный в форме e-mail придет запрос на подтверждение регистрации.";
+$MESS["AUTH_EMAIL_SENT"] = "На указанный в форме e-mail было выслано письмо с информацией о подтверждении регистрации.";
+$MESS["AUTH_EMAIL"] = "E-Mail";
+$MESS["AUTH_SECURE_NOTE"] = "Перед отправкой формы пароль будет зашифрован в браузере. Это позволит избежать передачи пароля в открытом виде.";
+$MESS["main_register_sms_code"] = "Код подтверждения из СМС";
+$MESS["main_register_sms_send"] = "Отправить";
+$MESS["main_register_phone_number"] = "Номер телефона";
+$MESS["WELCOME_MESS"] = "Здравствуйте, если вы ранее регистрировали, то перейдите по ссылке: ";
+$MESS["LINK_AUTH"] = "Авторизация";
+$MESS["FIELD_NAME"] = "Имя: ";
+$MESS["FIELD_LAST_NAME"] = "Фамилия: ";
+$MESS["FIELD_EMAIL"] = "Email: ";
+$MESS["FIELD_LOGIN"] = "Логин: ";
+$MESS["FIELD_PASS"] = "Пароль: ";
+$MESS["FIELD_PASS_2"] = "Повторите пароль: ";
+$MESS["SUBMIT_REG"] = "Зарегистрироваться";
+$MESS["SIDE_INFO_TITLE"] = "Регистрация бесплатна.";
+$MESS["SIDE_INFO_TEXT"] = "Текст-рыба, который что-то должен значить, но если вы не поняли, то поймете.";
+?>

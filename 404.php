@@ -8,6 +8,8 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
 $APPLICATION->SetTitle("404 Not Found");
 ?>
-404 Page
+<div class="container">
+Страница не найдена. Вернитесь на <a href="<?=SITE_DIR?>"><b>главную</b></a>
+</div>
 <?php
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
