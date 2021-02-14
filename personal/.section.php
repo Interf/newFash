@@ -1,5 +1,5 @@
 <?
-$sSectionName = "Personal";
+$sSectionName = "";
 $arDirProperties = Array(
 
 );

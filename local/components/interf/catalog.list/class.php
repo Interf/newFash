@@ -176,8 +176,13 @@ class CatalogList extends CBitrixComponent
 						$item["PRICES"]["DISCOUNT_PERCENT"] = "-{$discount['VALUE']}%"; 
 						break;
 					}
+					
+					$item["PRICES"]["DISCOUNT_PRICE"] = \Bitrix\Catalog\Product\Price::roundPrice(
+						$this->arParams["PRICE_TYPE"],
+						$discountPrice,
+						$item["CURRENCY_" . $this->arParams["PRICE_TYPE"]]
+					);
 
-					$item["PRICES"]["DISCOUNT_PRICE"] = $discountPrice;
 					$item["PRICES"]["DISCOUNT_PRICE_FORMATED"] = CCurrencyLang::CurrencyFormat(
 						$discountPrice,
 						$item["CURRENCY_" . $this->arParams["PRICE_TYPE"]]

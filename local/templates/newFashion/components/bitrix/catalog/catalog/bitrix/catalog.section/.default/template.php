@@ -15,12 +15,12 @@ use \Bitrix\Main\Localization\Loc;
 				<img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" class="img-responsive" alt="">
 				<div class="b-wrapper">
 					<h4 class="b-animate b-from-left  b-delay03">							
-						<button class="btns">ORDER NOW</button>
+						<button class="btns"><?=Loc::getMessage("ORDER_NOW");?></button>
 					</h4>
 				</div>
 			</div></a>						
 			<div class="product-info simpleCart_shelfItem">
-				<div class="product-info-cust">
+				<div class="product-info-cust item_info_section">
 					<h4><?=$arItem["NAME"]?></h4>
 					<span 
 						class="item_price"
@@ -32,8 +32,13 @@ use \Bitrix\Main\Localization\Loc;
 						<br>
 						<span class="item_price"><?=$arItem["PRICES"]["BASE"]["PRINT_DISCOUNT_VALUE"]?></span>
 					<?php endif; ?>
-					<input type="text" class="item_quantity" value="1">
-					<input type="button" class="item_add items" value="ADD">
+					<input type="text" class="item_quantity quantity-item" value="1">
+					<?php if ($arItem["PRODUCT"]["QUANTITY"] <= 0) : ?>
+						<a href="<?=$arItem["DETAIL_PAGE_URL"]?>"><?=Loc::getMessage("CAN_NOT_BUY");?></a>
+					<?php else : ?>
+						<input type="button" class="item_add items addToCart" value="ADD" item-id="<?=$arItem["ID"];?>">
+					<?php endif; ?>
+					
 				</div>											
 				<div class="clearfix"> </div>
 			</div>

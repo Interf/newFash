@@ -1,5 +1,7 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
+use \Bitrix\Main\Localization\Loc;
+
 $this->addExternalCss(SITE_TEMPLATE_PATH . "/css/form.css");
 $this->addExternalJs(SITE_TEMPLATE_PATH . "/js/jquery.easydropdown.js");
 
@@ -59,14 +61,14 @@ if (empty($arResult["COMBO"])) {
 			type="submit"
 			id="set_filter"
 			name="set_filter"
-			value="Фильтровать"
+			value="<?=Loc::getMessage("FILTER_VALUE_NAME");?>"
 			/>
 			<input
 			class="btn btn-link"
 			type="submit"
 			id="del_filter"
 			name="del_filter"
-			value="Сбросить"
+			value="<?=Loc::getMessage("FILTER_VALUE_RESET");?>"
 			/>
 		</div>
 

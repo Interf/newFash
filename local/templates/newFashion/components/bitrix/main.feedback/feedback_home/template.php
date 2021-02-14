@@ -1,5 +1,7 @@
 <?
 if(!defined("B_PROLOG_INCLUDED")||B_PROLOG_INCLUDED!==true)die();
+
+use \Bitrix\Main\Localization\Loc;
 ?>
 
 <div class="col-md-6 contact" id="form_home">
@@ -20,20 +22,20 @@ if(!defined("B_PROLOG_INCLUDED")||B_PROLOG_INCLUDED!==true)die();
 		class="text" 
 		value="<?=$arResult["AUTHOR_NAME"]?>"
 		name="user_name"
-		placeholder="Name..."
+		placeholder="<?=Loc::getMessage("PLACEHOLDER_NAME");?>"
 		>
 		<input 
 		type="text" 
 		class="text" 
 		value="<?=$arResult["AUTHOR_EMAIL"]?>" 
 		name="user_email"
-		placeholder="Email..."
+		placeholder="<?=Loc::getMessage("PLACEHOLDER_EMAIL");?>"
 		>
-		<textarea  name="MESSAGE" placeholder="Messsage..."><?=$arResult["MESSAGE"]?></textarea>	
+		<textarea  name="MESSAGE" placeholder="<?=Loc::getMessage("PLACEHOLDER_MESS");?>"><?=$arResult["MESSAGE"]?></textarea>	
 		<div class="clearfix"></div>
 		
 		<?=bitrix_sessid_post()?>
 		<input type="hidden" name="PARAMS_HASH" value="<?=$arResult["PARAMS_HASH"]?>">
-		<input type="submit" name="submit" value="Submit">
+		<input type="submit" name="submit" value="<?=Loc::getMessage("SUBMIT_VALUE");?>">
 	</form>
 </div>

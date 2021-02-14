@@ -28,7 +28,7 @@ $arComponentParameters = array(
 	"PARAMETERS" => array(
 		"IBLOCK_TYPE" => array(
 			"PARENT" => "DATA_SOURCE",
-			"NAME" => "тип инфоблока",
+			"NAME" => Loc::getMessage("IBLOCK_TYPE"),
 			"TYPE" => "LIST",
 			"VALUES" => $arTypeList,
 			"DEFAULT" => "-",
@@ -37,7 +37,7 @@ $arComponentParameters = array(
 		),
 		"IBLOCK_ID" => array(
 			"PARENT" => "DATA_SOURCE",
-			"NAME" => "Инфоблок",
+			"NAME" => Loc::getMessage("IBLOCK_ID"),
 			"TYPE" => "LIST",
 			"VALUES" => $arIbList,
 			"DEFAULT" => "-",
@@ -45,7 +45,7 @@ $arComponentParameters = array(
 			"MULTIPLE" => "N"
 		),
 		"COUNT_ON_PAGE" => array(
-			"NAME" => "Количество элементов на странице",
+			"NAME" => Loc::getMessage("COUNT_ON_PAGE"),
 			"TYPE" => "STRING",
 			"DEFAULT" => "1",
 			"PARENT" => "BASE"

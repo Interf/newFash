@@ -13,7 +13,7 @@ if (
 
 $arTypeList = CIBlockParameters::GetIBlockTypes(["-" => Loc::getMessage("IBLOCK_TYPE_CHOOSE")]);
 
-$arIbList = ["-" => "Выберите инфоблок"];
+$arIbList = ["-" => Loc::getMessage("CHOOSE_IB")];
 if ($arCurrentValues["IBLOCK_TYPE"] != "-") {
 
 	$arIb = CIBlock::GetList(
@@ -66,7 +66,7 @@ $arComponentParameters = array(
 			"PARENT" => "BASE",
 			"NAME" =>  Loc::getMessage("COUNT_ON_PAGE"),
 			"TYPE" => "STRING",
-			"DEFAULT" => ""
+			"DEFAULT" => "1"
 		),
 		"CACHE_TIME" => array(
 			"DEFAULT" => "7200"

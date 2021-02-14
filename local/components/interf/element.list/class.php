@@ -24,31 +24,31 @@ class ElementList extends CBitrixComponent
 	protected function handlerError()
 	{
 		if (! Loader::includeModule("iblock")) {
-			$this->errorCollection[] = "Ошибка подключения модуля Iblock";
+			$this->errorCollection[] = Loc::getMessage("ERROR_IBLOCK_MODULE");
 		}
 
 		if ($this->arParams["IBLOCK_TYPE"] == "-") {
-			$this->errorCollection[] = "Некорретный тип инфоблока";
+			$this->errorCollection[] = Loc::getMessage("ERROR_IBLOCK_TYPE");
 		}
 
 		if (! $this->arParams["IBLOCK_ID"]) {
-			$this->errorCollection[] = "Некорретный инфоблок";
+			$this->errorCollection[] = Loc::getMessage("ERROR_IBLOCK_ID");
 		}
 
 		if (! $this->arParams["COUNT_ON_PAGE"]) {
-			$this->errorCollection[] = "Некорректное количество элементов";
+			$this->errorCollection[] = Loc::getMessage("ERROR_COUNT_ON_PAGE");
 		}
 
 		if ($this->arParams["SORT_FIELD"] == "") {
-			$this->errorCollection[] = "Некорретное поле сортировки";
+			$this->errorCollection[] = Loc::getMessage("ERROR_SORT_FIELD");
 		}
 
 		if ($this->arParams["SORT_ORDER"] != "ASC" && $this->arParams["SORT_ORDER"] != "DESC") {
-			$this->errorCollection[] = "Некорретное направление сортировки";
+			$this->errorCollection[] = Loc::getMessage("ERROR_SORT_ORDER");
 		}
 
 		if (! $this->arParams["CACHE_TIME"]) {
-			$this->errorCollection[] = "Некорретное время кэширования";
+			$this->errorCollection[] = Loc::getMessage("ERROR_CACHE_TIME");
 		}
 
 		switch ($this->arParams["CACHE_TYPE"]) {
@@ -58,7 +58,7 @@ class ElementList extends CBitrixComponent
 			break;
 			
 			default:
-			$this->errorCollection[] = "Некорретный тип кэширования";
+			$this->errorCollection[] = Loc::getMessage("ERROR_CACHE_TYPE");
 			break;
 		}
 

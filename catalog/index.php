@@ -1,5 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("not_show_title", "Y");
 $APPLICATION->SetTitle("Catalog");
 ?>
 <?$APPLICATION->IncludeComponent(

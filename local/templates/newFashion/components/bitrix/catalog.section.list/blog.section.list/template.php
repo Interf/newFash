@@ -1,8 +1,10 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+
+use \Bitrix\Main\Localization\Loc;
 ?>
 
 <div class="col-md-3 sidebar">
-	<h3>CATEGORIES</h3>
+	<h3><?=Loc::getMessage("TITLE_SECTIONS_LIST");?></h3>
 	<ul>
 		<?php foreach($arResult["SECTIONS"] as $arItem) : ?>
 			<?php

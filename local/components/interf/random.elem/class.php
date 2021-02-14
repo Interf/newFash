@@ -22,19 +22,23 @@ class CatalogList extends CBitrixComponent
 	protected function handlerError()
 	{
 		if (! Loader::includeModule("iblock")) {
-			$this->errorCollection[] = "Не подключен модуль Iblock";
+			$this->errorCollection[] = Loc::getMessage("LOAD_MODULE_IBLOCK");
 		}
 
 		if ($this->arParams["IBLOCK_TYPE"] == "-") {
-			$this->errorCollection[] = "Некорректный тип инфоблока";
+			$this->errorCollection[] = Loc::getMessage("ERROR_IBLOCK_TYPE");
 		}
 
 		if (! $this->arParams["IBLOCK_ID"]) {
-			$this->errorCollection[] = "Некорректный инфоблок";
+			$this->errorCollection[] = Loc::getMessage("ERROR_IBLOCK_ID");
 		}
 
 		if (! $this->arParams["COUNT_ON_PAGE"]) {
-			$this->errorCollection[] = "Некорректное количество элементов на странице";
+			$this->errorCollection[] = Loc::getMessage("ERROR_COUNT_ON_PAGE");
+		}
+
+		if (! $this->arParams["CACHE_TIME"]) {
+			$this->errorCollection[] = Loc::getMessage("ERROR_CACHE_TIME");
 		}
 
 		switch ($this->arParams["CACHE_TYPE"]) {
@@ -44,7 +48,7 @@ class CatalogList extends CBitrixComponent
 				break;
 			
 			default:
-				$this->errorCollection[] = "Некорректное тип кэширования";
+				$this->errorCollection[] = Loc::getMessage("ERROR_CACHE_TYPE");
 				break;
 		}
 

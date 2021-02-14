@@ -1,4 +1,6 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+
+use \Bitrix\Main\Localization\Loc;
 ?>
 
 <div class="col-md-9 fashion-blogs">
@@ -19,7 +21,7 @@
 				<img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" class="img-responsive" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>">
 			</a>
 			<p class="blog-info"><?=$arItem["PREVIEW_TEXT"];?></p>
-			<a class="read" href="<?=$arItem["DETAIL_PAGE_URL"]?>">Read More</a>
+			<a class="read" href="<?=$arItem["DETAIL_PAGE_URL"]?>"><?=Loc::getMessage("READ_MORE");?></a>
 		</div>
 	<?php endforeach; ?>
 

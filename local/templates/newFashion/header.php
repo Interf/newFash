@@ -27,7 +27,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	Asset::getInstance()->AddCss(SITE_TEMPLATE_PATH . "/css/component.css");
 
 	Asset::getInstance()->AddJs(SITE_TEMPLATE_PATH . "/js/jquery.min.js");
-	Asset::getInstance()->AddJs(SITE_TEMPLATE_PATH . "/js/simpleCart.min.js");
+	
+	Asset::getInstance()->AddJs(SITE_TEMPLATE_PATH . "/js/handlerClickToBtn.js");
 
 // start menu
 	Asset::getInstance()->AddCss(SITE_TEMPLATE_PATH . "/css/megamenu.css");
@@ -47,13 +48,42 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="logo">
 					<h3><a href="/">NEW FASHIONS</a></h3>
-				</div>			  
-				<div class="box_1">				 
-					<a href="cart.html"><h3>Cart: <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)<img src="images/cart.png" alt=""/></h3></a>
-					<p><a href="javascript:;" class="simpleCart_empty">empty cart</a></p>
-
 				</div>
-
+				<?php if ($_POST["AJAX_BASKET_LINE"] == "Y")  {
+					$APPLICATION->RestartBuffer();
+				}?>
+				<div class="basket_line_container">  
+					<?$APPLICATION->IncludeComponent(
+						"bitrix:sale.basket.basket.line",
+						"basket.line.header",
+						Array(
+							"COMPONENT_TEMPLATE" => "basket.line.header",
+							"HIDE_ON_BASKET_PAGES" => "N",
+							"PATH_TO_AUTHORIZE" => "",
+							"PATH_TO_BASKET" => SITE_DIR."personal/cart/",
+							"PATH_TO_ORDER" => SITE_DIR."personal/order/",
+							"PATH_TO_PERSONAL" => SITE_DIR."personal/",
+							"PATH_TO_PROFILE" => SITE_DIR."personal/",
+							"PATH_TO_REGISTER" => SITE_DIR."login/",
+							"POSITION_FIXED" => "N",
+							"SHOW_AUTHOR" => "N",
+							"SHOW_DELAY" => "N",
+							"SHOW_EMPTY_VALUES" => "N",
+							"SHOW_IMAGE" => "N",
+							"SHOW_NOTAVAIL" => "N",
+							"SHOW_NUM_PRODUCTS" => "N",
+							"SHOW_PERSONAL_LINK" => "N",
+							"SHOW_PRICE" => "Y",
+							"SHOW_PRODUCTS" => "N",
+							"SHOW_REGISTRATION" => "N",
+							"SHOW_SUMMARY" => "Y",
+							"SHOW_TOTAL_PRICE" => "Y"
+						)
+						);?>
+					<?php if ($_POST["AJAX_BASKET_LINE"] == "Y")  {
+						exit();
+					}?>
+				</div>
 				<div class="clearfix"></div>
 			</div>
 
@@ -79,11 +109,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 
 	<?php if ($isHome) : ?>
-		<div class="caption">
-			<h1>FASHION AND CREATIVITY</h1>	 
-			<p>Sed dapibus est a lorem dictum, id dignissim lacus fermentum. Nulla ut nibh in libero maximus pretium
-			Nunc vulputate vel tellus ac elementum. Duis nec tincidunt dolor, ac dictum eros.</p>
-		</div>
+		<?$APPLICATION->IncludeComponent(
+			"bitrix:main.include",
+			"",
+			Array(
+				"AREA_FILE_SHOW" => "page",
+				"AREA_FILE_SUFFIX" => "header_inc",
+				"EDIT_TEMPLATE" => ""
+			)
+			);?>
+		
 	<?php endif; ?>
 
 </div>
@@ -100,10 +135,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				"START_FROM" => "0"
 			)
 			);?>
-			<?php if (
-						strpos($APPLICATION->GetCurPage(), "/catalog/", 0) === false &&
-						strpos($APPLICATION->GetCurPage(), "/blog/", 0) === false
-					) : ?>
+			<?php if ($APPLICATION->GetDirProperty("not_show_title") != "Y") : ?>
 				<h2 style="text-transform: uppercase;"><?php $APPLICATION->ShowTitle(false); ?></h2>
 			<?php endif; ?>
 <?php endif; ?>

@@ -5,3 +5,5 @@ $MESS["IBLOCK_TYPE"] =  "Тип инфоблока";
 $MESS["IBLOCK_ID"] =  "Инфоблока";
 $MESS["PRICE_TYPE"] =  "Тип цены";
 $MESS["COUNT_ON_PAGE"] =  "Количество элементов на странице";
+$MESS["CHOOSE_IB"] =  "Выберите инфобок";
+$MESS["CHOOSE_IB"] =  "Выберите инфобок";

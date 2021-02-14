@@ -5,7 +5,7 @@ use \Bitrix\Main\Localization\Loc;
 ?>
 
 <div class="tabs-box">
-	<ul class="tabs-menu" style="width: 34%;">
+	<ul class="tabs-menu tab_test">
 		<li data-sort="new"><a href="?sort=#features"><?=Loc::getMessage("SORT_NEW");?></a></li>
 		<li data-sort="price_asc"><a href="?sort=price_asc#features"><?=Loc::getMessage("SORT_PRICE_ASC");?></a></li>
 		<li data-sort="price_desc"><a href="?sort=price_desc#features"><?=Loc::getMessage("SORT_PRICE_DESC");?></a></li>
@@ -32,7 +32,7 @@ use \Bitrix\Main\Localization\Loc;
 						</div>
 					</div></a>						
 					<div class="product-info simpleCart_shelfItem">
-						<div class="product-info-cust">
+						<div class="product-info-cust item_info_section">
 							<h4><?=$arItem["NAME"];?></h4>
 							<span 
 							class="item_price" 
@@ -44,11 +44,11 @@ use \Bitrix\Main\Localization\Loc;
 							<?php if ($arItem["PRICES"]["DISCOUNT_PERCENT"]) : ?>
 								<span class="item_price"><?=$arItem["PRICES"]["DISCOUNT_PRICE_FORMATED"];?></span>
 							<?php endif; ?>
-							<input type="text" class="item_quantity" value="1">
+							<input type="text" class="item_quantity quantity-item" value="1">
 							<?php if ($arItem["QUANTITY"] <= 0) : ?>
 								<a href="<?=$arItem["DETAIL_PAGE_URL"]?>"><?=Loc::getMessage("CAN_NOT_BUY");?></a>
 							<?php else : ?>
-								<input type="button" class="item_add" value="ADD">
+								<input type="button" class="item_add addToCart" value="<?=Loc::getMessage("BTN_VALUE");?>" item-id="<?=$arItem["ID"];?>">
 							<?php endif; ?>
 						</div>													
 						<div class="clearfix"> </div>

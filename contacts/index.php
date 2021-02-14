@@ -3,8 +3,6 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Contacts");
 ?>
 
-
-
 <div class="col-md-6 contact_left">
 	<?$APPLICATION->IncludeComponent("bitrix:main.feedback", "feedback.contacts", Array(
 	"EMAIL_TO" => "int@int.int",	// E-mail, на который будет отправлено письмо

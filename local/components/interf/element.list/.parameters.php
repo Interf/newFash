@@ -8,9 +8,9 @@ if (! Loader::includeModule("iblock")) {
 	return false;
 }
 
-$arTypeList = CIBlockParameters::GetIBlockTypes(["-" => "Выберите тип инфоблока"]);
+$arTypeList = CIBlockParameters::GetIBlockTypes(["-" => Loc::getMessage("CHOOSE_IBLOCK_TYPE")]);
 
-$arIbList = ["-" => "Выберите инфоблок"];
+$arIbList = ["-" => Loc::getMessage("CHOOSE_IBLOCK")];
 if ($arCurrentValues["IBLOCK_TYPE"] != "-") {
 	$rsIb = CIBlock::GetList(
 		array("sort" => "asc"), 
@@ -23,20 +23,20 @@ if ($arCurrentValues["IBLOCK_TYPE"] != "-") {
 }
 
 $arSortList = [
-	"ID" => "ID",
-	"NAME" => "Название"
+	"ID" => Loc::getMessage("CHOOSE_SORT_ID"),
+	"NAME" => Loc::getMessage("CHOOSE_SORT_NAME")
 ];
 
 $arSortOrder = [
-	"ASC" => "По возврастанию",
-	"DESC" => "По убыванию"
+	"ASC" => Loc::getMessage("CHOOSE_SORT_ORDER_ASC"),
+	"DESC" => Loc::getMessage("CHOOSE_SORT_ORDER_DESC")
 ];
 
 $arComponentParameters = array(
 	"PARAMETERS" => array(
 		"IBLOCK_TYPE" => array(
 			"PARENT" => "DATA_SOURCE",
-			"NAME" => "Тип инфоблока",
+			"NAME" => Loc::getMessage("IBLOCK_TYPE"),
 			"TYPE" => "LIST",
 			"VALUES" => $arTypeList,
 			"DEFAULT" => "-",
@@ -45,7 +45,7 @@ $arComponentParameters = array(
 		),
 		"IBLOCK_ID" => array(
 			"PARENT" => "DATA_SOURCE",
-			"NAME" => "Инфоблок",
+			"NAME" => Loc::getMessage("IBLOCK_ID"),
 			"TYPE" => "LIST",
 			"VALUES" => $arIbList,
 			"DEFAULT" => "-",
@@ -54,13 +54,13 @@ $arComponentParameters = array(
 		),
 		"COUNT_ON_PAGE" => array(
 			"PARENT" => "BASE",
-			"NAME" => "Количество элементов на странице",
+			"NAME" => Loc::getMessage("COUNT_ON_PAGE"),
 			"TYPE" => "STRING",
 			"DEFAULT" => "1"
 		),
 		"SORT_FIELD" => array(
 			"PARENT" => "BASE",
-			"NAME" => "По какому полю сортировать",
+			"NAME" => Loc::getMessage("SORT_FIELD"),
 			"TYPE" => "LIST",
 			"VALUES" => $arSortList,
 			"DEFAULT" => "ID",
@@ -68,7 +68,7 @@ $arComponentParameters = array(
 		),
 		"SORT_ORDER" => array(
 			"PARENT" => "BASE",
-			"NAME" => "Направление сортировки",
+			"NAME" => Loc::getMessage("SORT_ORDER"),
 			"TYPE" => "LIST",
 			"VALUES" => $arSortOrder,
 			"DEFAULT" => "ASC",

@@ -1,8 +1,9 @@
 <?php
 
-$MESS["SORT_NEW"] = "New Arrivals";
-$MESS["SORT_PRICE_ASC"] = "Price Asc";
-$MESS["SORT_PRICE_DESC"] = "Price Desc";
-$MESS["NEW"] = "New";
-$MESS["ORDER_NOW"] = "ORDER NOW";
-$MESS["CAN_NOT_BUY"] = "Not Available";
+$MESS["SORT_NEW"] = "Новые поступления";
+$MESS["SORT_PRICE_ASC"] = "По цене (0 - 9)";
+$MESS["SORT_PRICE_DESC"] = "По цене (9 - 0)";
+$MESS["NEW"] = "Новинка";
+$MESS["ORDER_NOW"] = "Купить";
+$MESS["CAN_NOT_BUY"] = "Нет в наличии";
+$MESS["BTN_VALUE"] = "В корзину";
