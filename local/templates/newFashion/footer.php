@@ -10,7 +10,7 @@ use \Bitrix\Main\Localization\Loc;
 <!--fotter//-->
 <div class="fotter-logo">
 	 <div class="container">
-	 <div class="ftr-logo"><h3><a href="index.html"><?=Loc::getMessage("COPYRIGHT_TITLE");?></a></h3></div>
+	 <div class="ftr-logo"><h3><a href="/"><?=Loc::getMessage("COPYRIGHT_TITLE");?></a></h3></div>
 	 <div class="ftr-info">
 	 <p><?=Loc::getMessage("COPYRIGHT_NAME");?> <a href="http://w3layouts.com/"><?=Loc::getMessage("COPYRIGHT_AUTHOR");?></a> </p>
 	</div>
