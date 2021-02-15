@@ -76,10 +76,13 @@ if ($arResult['DATA_SAVED'] == 'Y') {
 			<input type="password" name="NEW_PASSWORD_CONFIRM" maxlength="50" value="" autocomplete="off">
 
 		<?php endif?>
-
-		<input type="submit" name="save" value="<?=(($arResult["ID"] > 0) ? GetMessage("MAIN_SAVE") : GetMessage("MAIN_ADD"))?>">
+		
+		<div>
+			<input type="reset" value="<?=GetMessage('MAIN_RESET');?>">
+		</div>
 		<br><br><br>
-		<input type="reset" value="<?=GetMessage('MAIN_RESET');?>">
+		<input type="submit" name="save" value="<?=(($arResult["ID"] > 0) ? GetMessage("MAIN_SAVE") : GetMessage("MAIN_ADD"))?>">
+		
 	</form>				 
 </div>
 <div class="clearfix"></div>		 
