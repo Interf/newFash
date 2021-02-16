@@ -177,18 +177,20 @@ class CatalogList extends CBitrixComponent
 				);
 
 				if (! empty($arDiscount)) {
-					$discount = end($arDiscount);
 
-					switch ($discount["VALUE_TYPE"]) {
-						case 'F':
-						$discountPrice = $item["PRICE_" . $this->arParams["PRICE_TYPE"]] - $discount["VALUE"];
-						$item["PRICES"]["DISCOUNT_MONEY"] = "-{$discount['VALUE']}"; 
-						break;
-						case 'P':
-						$discountPrice = $item["PRICE_" . $this->arParams["PRICE_TYPE"]];
-						$discountPrice -= ($item["PRICE_" . $this->arParams["PRICE_TYPE"]] * ($discount["VALUE"] / 100));
-						$item["PRICES"]["DISCOUNT_PERCENT"] = "-{$discount['VALUE']}%"; 
-						break;
+					$discountPrice = $item["PRICE_" . $this->arParams["PRICE_TYPE"]];
+
+					foreach ($arDiscount as $discount) {
+						switch ($discount["VALUE_TYPE"]) {
+							case 'F':
+							$discountPrice -= $discount["VALUE"];
+							$item["PRICES"]["DISCOUNT_MONEY"] = "-{$discount['VALUE']}"; 
+							break;
+							case 'P':
+							$discountPrice -= ($discountPrice * ($discount["VALUE"] / 100));
+							$item["PRICES"]["DISCOUNT_PERCENT"] = "-{$discount['VALUE']}%"; 
+							break;
+						}
 					}
 					
 					$item["PRICES"]["DISCOUNT_PRICE"] = \Bitrix\Catalog\Product\Price::roundPrice(
@@ -198,9 +200,10 @@ class CatalogList extends CBitrixComponent
 					);
 
 					$item["PRICES"]["DISCOUNT_PRICE_FORMATED"] = CCurrencyLang::CurrencyFormat(
-						$discountPrice,
+						$item["PRICES"]["DISCOUNT_PRICE"],
 						$item["CURRENCY_" . $this->arParams["PRICE_TYPE"]]
 					);
+
 				}
 
 				$this->arResult["ITEMS"][$item["ID"]] = $item;
